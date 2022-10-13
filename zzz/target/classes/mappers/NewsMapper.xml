@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zls.zzz.mapper.NewsMapper">
+
+    <resultMap id="BaseResultMap" type="com.zls.zzz.entity.News">
+        <result column="ID" jdbcType="INTEGER" property="ID"/>
+        <result column="INDEX" jdbcType="INTEGER" property="INDEX" />
+        <result column="TITLE" jdbcType="VARCHAR" property="TITLE" />
+        <result column="COVER_PATH" jdbcType="VARCHAR" property="COVER_PATH"/>
+        <result column="CONTENE" jdbcType="LONGVARCHAR" property="CONTENE"/>
+        <result column="TIME" jdbcType="DATE" property="TIME"/>
+    </resultMap>
+
+    <!--查询置顶-->
+    <select id="newsFindNo"  resultType="com.zls.zzz.entity.News" >
+
+        select * from new where `INDEX` = #{INDEX};
+
+
+    </select>
+
+    <!--新增-->
+    <insert id="newsAdd">
+        INSERT INTO new (`ID`, `INDEX`, `TITLE`, `COVER_PATH`, `CONTENE`, `TIME`) VALUES (#{ID}, #{INDEX}, #{TITLE}, #{COVER_PATH}, #{CONTENE}, #{TIME});
+    </insert>
+
+    <!--删除-->
+    <delete id="newsDel">
+
+        delete from new where ID = #{ID};
+
+    </delete>
+
+    <!--修改-->
+    <update id="newsEdit">
+
+        update new set `INDEX` = #{INDEX},`TITLE`=#{TITLE},`COVER_PATH`=#{COVER_PATH},`CONTENE`=#{CONTENE},`TIME`=#{TIME} where ID = #{ID};
+
+    </update>
+
+    <!--查询所有-->
+    <select id="newsFindAll"  resultType="com.zls.zzz.entity.News">
+        select * from new;
+    </select>
+
+    <!--查询单条-->
+    <select id="newsFindOne"  resultType="com.zls.zzz.entity.News" >
+
+        select * from new where  ID = #{ID};
+
+    </select>
+
+</mapper>
