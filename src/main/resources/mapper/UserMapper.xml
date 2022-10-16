@@ -11,14 +11,9 @@
     代码从官网粘贴的
 -->
 <mapper namespace="com.example.yx_login3.mapper.UserMapper">
-    <select id="selectUsernmaeAndPassword" resultType="com.example.yx_login3.pojo.User">
+    <select id="selectUsernmaeAndPassword" resultType="com.example.yx_login3.entity.User">
         select * from user where username = #{username} and password = #{password};
     </select>
-
-    <select id="queryUser2" resultType="com.example.yx_login3.pojo.User">
-        select username,age,address from user where username=#{username} and age=#{age}
-    </select>
-
 </mapper>
 
 

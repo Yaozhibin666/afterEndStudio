@@ -1,9 +1,9 @@
 package com.example.yx_login3.controller;
 
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.example.yx_login3.MyBatisDemo;
+import com.example.yx_login3.service.LoginServicelmp.LoginServicelmp;
 import com.example.yx_login3.Utils.JWTUtils;
-import com.example.yx_login3.pojo.User;
+import com.example.yx_login3.entity.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +17,7 @@ import java.util.Map;
 @RestController
 public class LoginController {
         @Resource
-        MyBatisDemo myBatisDemo;
+        LoginServicelmp myBatisDemo;
 
         @RequestMapping("/register")
         public Map<String, Object> register(User user) throws IOException {
