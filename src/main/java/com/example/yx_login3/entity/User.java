@@ -1,4 +1,4 @@
-package com.example.yx_login3.pojo;
+package com.example.yx_login3.entity;
 
 import lombok.Data;
 

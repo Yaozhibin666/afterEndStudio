@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.yx_login3.mapper.FormMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.yx_login3.entity.Form">
+        <result column="ID" jdbcType="INTEGER" property="ID"/>
+        <result column="NAME" jdbcType="CHAR" property="NAME" />
+        <result column="EMAIL" jdbcType="VARCHAR" property="EMAIL" />
+        <result column="PHONE" jdbcType="CHAR" property="PHONE"/>
+        <result column="PROJECT" jdbcType="LONGVARCHAR" property="PROJECT"/>
+        <result column="TEXT" jdbcType="LONGVARCHAR" property="TEXT"/>
+        <result column="read" jdbcType="TINYINT" property="read"/>
+    </resultMap>
+
+    <!--新增-->
+    <insert id="formAdd" useGeneratedKeys="true" keyProperty="ID"  keyColumn="ID">
+
+        INSERT into form ( `NAME`, `EMAIL`, `PHONE`, `PROJECT`, `TEXT`, `read`) VALUES (#{NAME},#{EMAIL},#{PHONE},#{PROJECT},#{TEXT},#{read});
+        <selectKey resultType="int" keyProperty="ID" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <!--删除-->
+    <delete id="formDel">
+
+        delete from form where ID = #{ID};
+
+    </delete>
+
+    <!--修改-->
+    <update id="formEdit">
+
+        update form set `NAME` = #{NAME},`EMAIL`=#{EMAIL},`PHONE`=#{PHONE},`PROJECT`=#{PROJECT},`TEXT`=#{TEXT},`read`=#{read} where ID = #{ID};
+
+    </update>
+
+    <!--查询所有-->
+    <select id="formFindAll"  resultType="com.example.yx_login3.entity.Form">
+        select * from form;
+    </select>
+
+    <!--查询单条-->
+    <select id="formFindOne"  resultType="com.example.yx_login3.entity.Form" >
+
+        select * from form where  ID = #{ID};
+
+    </select>
+
+
+</mapper>
