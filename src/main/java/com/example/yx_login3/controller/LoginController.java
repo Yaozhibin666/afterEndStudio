@@ -1,7 +1,7 @@
 package com.example.yx_login3.controller;
 
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.example.yx_login3.service.LoginServicelmp.LoginServicelmp;
+import com.example.yx_login3.service.serviceImp.LoginServicelmp;
 import com.example.yx_login3.Utils.JWTUtils;
 import com.example.yx_login3.entity.User;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@RequestMapping("login")
 public class LoginController {
         @Resource
         LoginServicelmp myBatisDemo;
