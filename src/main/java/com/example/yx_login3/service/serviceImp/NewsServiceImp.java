@@ -1,4 +1,4 @@
-package com.example.yx_login3.service.NewsServiceImp;
+package com.example.yx_login3.service.serviceImp;
 
 import com.example.yx_login3.service.NewsService;
 import com.example.yx_login3.entity.News;

@@ -1,16 +1,10 @@
-package com.example.yx_login3.mapper;
+package com.example.yx_login3.service;
 
 import com.example.yx_login3.entity.User;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-@Mapper
-public interface UserMapper {
-    /*查询用户是否存在*/
-    User selectUsernmaeAndPassword(@Param("username") String username, @Param("password") String password);
-
+public interface UserService {
     /*增添用户*/
     boolean add(User user);
 
