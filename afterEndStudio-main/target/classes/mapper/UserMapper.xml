@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    namespace:名称空间
+    代码从官网粘贴的
+    代码从官网粘贴的
+    代码从官网粘贴的
+    代码从官网粘贴的
+    代码从官网粘贴的
+-->
+<mapper namespace="com.example.yx_login3.mapper.UserMapper">
+    <select id="selectUsernmaeAndPassword" resultType="com.example.yx_login3.entity.User">
+        select * from user where username = #{username} and password = #{password};
+    </select>
+
+    <insert id="add">
+        INSERT into user (username,password) VALUES (#{username},#{password});
+    </insert>
+
+    <delete id="delete" >
+        DELETE FROM user WHERE id = #{id};
+    </delete>
+
+    <update id="update" >
+        UPDATE user SET username = #{username} , password = #{password} WHERE id = #{id};
+    </update>
+
+    <select id="queryAll" resultType="com.example.yx_login3.entity.User">
+        SELECT * FROM user;
+    </select>
+
+    <select id="queryOne" resultType="com.example.yx_login3.entity.User">
+        SELECT * FROM user WHERE id = #{id};
+    </select>
+</mapper>
+
+
+
+
